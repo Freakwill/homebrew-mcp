@@ -357,11 +357,9 @@ def main():
     
     # Initialize the FastMCP application with server metadata
     app = FastMCP(
-        "homebrew",
-        "Homebrew package manager",
-        auth_server_provider=None,
+        name="homebrew",
+        instructions="Homebrew package manager",
         tool_homepage="https://github.com/jeannier/homebrew-mcp",
-        auth=None,
     )
     logger.info({
         "event": "app_initialized",
@@ -401,7 +399,7 @@ def main():
     
     # Start the MCP server
     logger.info({"event": "server_run", "message": "Running FastMCP server..."})
-    app.run()
+    app.run()    # stdio
 
 # Entry point - run the server when script is executed directly
 if __name__ == "__main__":
